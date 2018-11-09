@@ -10,10 +10,10 @@ pipeline {
             }
         }
         stage('Test') {
+            environment {
+                username = 'Jenkins'
+            }
             steps {
-                environment {
-                    username = 'Jenkins'
-                }
                 echo 'Testing..'
                 // echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Hi Mr.${username}"
