@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {    //stage('Build')
             steps {
                 echo 'Building..'
-                sh 'echo "Hello Jenkins" > test.txt'
+                sh 'touch text.txt && echo "Hello Jenkins" > test.txt'
             }
         }
         stage('Test') {
