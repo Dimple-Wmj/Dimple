@@ -15,7 +15,7 @@ pipeline {
                     username = 'Jenkins'
                 }
                 echo 'Testing..'
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                // echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Hi Mr.${username}"
                 echo "I said Hi Mr.${username}"
             }
