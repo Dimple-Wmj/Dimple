@@ -12,6 +12,16 @@ pipeline {
         stage('Test') {
             environment {
                 USERNAME = 'Jenkins'
+                // Using returnStdout
+                CC = """{sh(
+                        returnStdout: true,
+                        script: 'echo "clang"'
+                     )}"""
+                // Using returnStatus
+                EXIT_STATUS = """{sh(
+                                returnStatus: true,
+                                script: 'exit 1'
+                               )}"""
             }
             steps {
                 echo 'Testing..'
@@ -19,7 +29,7 @@ pipeline {
                 echo "Hi Mr. ${USERNAME}"
                 echo "I said Hi Doc. ${USERNAME}"
                 echo " hello Jenkins"
-                //sh 'printenv'
+                sh 'printenv'
             }
         }
         stage('Deploy') {
