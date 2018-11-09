@@ -11,13 +11,14 @@ pipeline {
         }
         stage('Test') {
             environment {
-                username = 'Jenkins'
+                USERNAME = 'Jenkins'
             }
             steps {
                 echo 'Testing..'
                 // echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo Hi Mr.${username}
-                echo I said Hi Mr.${username}
+                //echo Hi Mr.${username}
+                //echo I said Hi Mr.${username}
+                sh 'printenv'
             }
         }
         stage('Deploy') {
