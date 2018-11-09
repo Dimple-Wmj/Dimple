@@ -16,8 +16,8 @@ pipeline {
             steps {
                 echo 'Testing..'
                 // echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo "Hi Mr.${username}"
-                echo "I said Hi Mr.${username}"
+                echo Hi Mr.${username}
+                echo I said Hi Mr.${username}
             }
         }
         stage('Deploy') {
