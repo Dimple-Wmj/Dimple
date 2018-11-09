@@ -18,6 +18,7 @@ pipeline {
                 // echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 echo "Hi Mr. ${USERNAME}"
                 echo "I said Hi Doc ${USERNAME}"
+                echo " hello Jenkins"
                 //sh 'printenv'
             }
         }
