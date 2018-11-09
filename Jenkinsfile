@@ -1,8 +1,9 @@
+// Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any
    
     stages {
-        stage('Build') {
+        stage('Build') {    //stage('Build')
             steps {
                 echo 'Building..'
             }
@@ -10,6 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                echo "Hello Jenkins" > test.txt
             }
         }
         stage('Deploy') {
