@@ -32,9 +32,9 @@ pipeline {
                 echo "Hi Mr. ${USERNAME}"
                 echo "I said Hi Doc. ${USERNAME}"
                 echo " hello Jenkins"
-                echo "${TEST_COMMON_CREDS}"
-                echo "${TEST_COMMON_CREDS_USR}"
-                echo "${TEST_COMMON_CREDS_PWS}"
+                echo "Test ${TEST_COMMON_CREDS}"
+                echo "USR ${TEST_COMMON_CREDS_USR}"
+                echo "PSW ${TEST_COMMON_CREDS_PSW}"
             }
         }
         stage('Deploy') {
