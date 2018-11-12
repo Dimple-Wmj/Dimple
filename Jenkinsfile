@@ -6,6 +6,7 @@ pipeline {
     }
     parameters {
         string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+        string(name: 'Testing', defaultValue: 'Testing', description: "Testing...")  
     }
    
     stages {
@@ -16,9 +17,6 @@ pipeline {
             }
         }
         stage('Test') {
-            parameters {
-                string(name: 'Testing', defaultValue: 'Testing', description: "Testing...")
-            }
             environment {
                 USERNAME = 'Jenkins'
                 // Using returnStdout
