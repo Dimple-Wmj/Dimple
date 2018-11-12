@@ -1,7 +1,7 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any
-    environments {
+    environment {
      TEST_COMMON_CREDS = credentials('jenkins-test-common-creds')   
     }
    
