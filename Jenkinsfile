@@ -16,6 +16,9 @@ pipeline {
             }
         }
         stage('Test') {
+            parameters {
+                string(name: 'Testing', defaultValue: 'Testing', description: "Testing...")
+            }
             environment {
                 USERNAME = 'Jenkins'
                 // Using returnStdout
@@ -39,11 +42,13 @@ pipeline {
                 // echo "USR ${TEST_COMMON_CREDS_USR}"
                 // echo "PSW ${TEST_COMMON_CREDS_PSW}"
                 echo "${params.Greeting} World!"
+                echo "${parames.Testing} ..."
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                echo "${params.Testing} ..."
             }
         }
     }
