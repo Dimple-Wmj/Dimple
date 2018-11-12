@@ -1,6 +1,9 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent any
+    environments {
+     TEST_COMMON_CREDS = credentials('jenkins-test-common-creds')   
+    }
    
     stages {
         stage('Build') {    //stage('Build')
@@ -13,15 +16,15 @@ pipeline {
             environment {
                 USERNAME = 'Jenkins'
                 // Using returnStdout
-                CC = """{sh(
-                        returnStdout: true,
-                        script: 'echo "clang"'
-                     )}"""
+                //CC = """{sh(
+                //        returnStdout: true,
+                //        script: 'echo "clang"'
+                //     )}"""
                 // Using returnStatus
-                EXIT_STATUS = """{sh(
-                                returnStatus: true,
-                                script: 'exit 1'
-                               )}"""
+                //EXIT_STATUS = """{sh(
+                //                returnStatus: true,
+                //                script: 'exit 1'
+                //               )}"""   
             }
             steps {
                 echo 'Testing..'
@@ -29,7 +32,9 @@ pipeline {
                 echo "Hi Mr. ${USERNAME}"
                 echo "I said Hi Doc. ${USERNAME}"
                 echo " hello Jenkins"
-                sh 'printenv'
+                echo "${TEST_COMMON_CREDS}"
+                echo "${TEST_COMMON_CREDS_USR}"
+                echo "${TEST_COMMON_CREDS_PWS}"
             }
         }
         stage('Deploy') {
