@@ -38,7 +38,7 @@ pipeline {
                 // echo "Test ${TEST_COMMON_CREDS}"
                 // echo "USR ${TEST_COMMON_CREDS_USR}"
                 // echo "PSW ${TEST_COMMON_CREDS_PSW}"
-                echo "${params.Greeting} World1"
+                echo "${params.Greeting} World!"
             }
         }
         stage('Deploy') {
