@@ -5,7 +5,7 @@ pipeline {
      TEST_COMMON_CREDS = credentials('jenkins-test-common-creds')   
     }
     parameters {
-        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?'
+        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
     }
    
     stages {
