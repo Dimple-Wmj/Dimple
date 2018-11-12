@@ -4,6 +4,9 @@ pipeline {
     environment {
      TEST_COMMON_CREDS = credentials('jenkins-test-common-creds')   
     }
+    parameters {
+        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?'
+    }
    
     stages {
         stage('Build') {    //stage('Build')
@@ -32,9 +35,10 @@ pipeline {
                 echo "Hi Mr. ${USERNAME}"
                 echo "I said Hi Doc. ${USERNAME}"
                 echo " hello Jenkins"
-                echo "Test ${TEST_COMMON_CREDS}"
-                echo "USR ${TEST_COMMON_CREDS_USR}"
-                echo "PSW ${TEST_COMMON_CREDS_PSW}"
+                // echo "Test ${TEST_COMMON_CREDS}"
+                // echo "USR ${TEST_COMMON_CREDS_USR}"
+                // echo "PSW ${TEST_COMMON_CREDS_PSW}"
+                echo "${params.Greeting} World1"
             }
         }
         stage('Deploy') {
