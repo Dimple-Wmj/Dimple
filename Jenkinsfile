@@ -1,6 +1,9 @@
-node ('worker_node') {
-  stage('test') {
-    sh 'ip a s'
-    git 'git@github.com:Dimple-Wmj/python_test.git'
+pipeline {
+  agent {label:'worker_node' }
+  stages {
+    stage('test') {
+      sh 'ip addr'
+      git 'git@github.com:Dimple-Wmj/python_test.git'
+    }
   }
 }
