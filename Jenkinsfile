@@ -1,10 +1,5 @@
-pipeline {
-  agent {label:'worker_node' }
-  stages {
-    stage('test') {
-      steps {
-        sh 'ip add' 
-      }
-    }
+node('worker_node') {
+  stage('Source') {
+   sh 'echo Hello' 
   }
 }
