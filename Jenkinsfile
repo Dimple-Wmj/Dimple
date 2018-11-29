@@ -1,5 +1,5 @@
 pipeline {
-  agent {label:'worker_node' }
+  agent {label:'master' }
   stages {
     stage('test') {
       sh 'ip addr'
