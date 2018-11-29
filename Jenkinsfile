@@ -1,4 +1,4 @@
-node('worker_node') {
+node('master') {
   stage('Source') {
    sh 'echo Hello' 
   }
